@@ -1,7 +1,7 @@
 // import SpaceOu from '@mui/icons-material/Dashboard';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Message, MessageOutlined, SpaceDashboard, SpaceDashboardOutlined } from '@mui/icons-material';
+import { Coffee, CoffeeOutlined, Message, MessageOutlined, SpaceDashboard, SpaceDashboardOutlined } from '@mui/icons-material';
 
 type Props = {}
 
@@ -13,6 +13,8 @@ type navElement = {
 
 function Navbar({}: Props) {
 
+  const [hoveredMain, setHoveredMain] = useState<boolean>(false);
+
   const location = useLocation();
 
   const navElts: Array<navElement> = [
@@ -22,6 +24,8 @@ function Navbar({}: Props) {
 
   return (
     <div className='flex flex-col items-center py-10 gap-5 bg-primary-150'>
+      <div onMouseEnter={() => setHoveredMain(true)} onMouseLeave={() => setHoveredMain(false)}>{hoveredMain ? <Coffee/> : <CoffeeOutlined/>}</div>
+      <hr className='border-t-gray-500 border border-t-1 w-1/2'/>
       {navElts.map((navElt, index) => {
         const isSelected: boolean = location.pathname === navElt.path;
         const Icon = navElt.icons[+isSelected];
