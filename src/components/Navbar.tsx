@@ -21,7 +21,7 @@ function Navbar({}: Props) {
   ]
 
   return (
-    <div className='flex flex-col items-center py-10 gap-5 bg-primary-200'>
+    <div className='flex flex-col items-center py-10 gap-5 bg-primary-150'>
       {navElts.map((navElt, index) => {
         const isSelected: boolean = location.pathname === navElt.path;
         const Icon = navElt.icons[+isSelected];
