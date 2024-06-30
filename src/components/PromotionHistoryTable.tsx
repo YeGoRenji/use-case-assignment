@@ -2,11 +2,6 @@ import { Box } from '@mui/material';
 import { Promotion } from '../types/apiTypes';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
-// const data = [
-//   { id: 1, message: 'Summer Sale 50% Off!', date: '2024-06-29' },
-//   { id: 2, message: 'Buy One Get One Free!', date: '2024-06-28' },
-// ];
-
 type Props = {
   promotions: Promotion[]
 }

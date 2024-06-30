@@ -26,7 +26,7 @@ function Promotion() {
   };
 
   return (
-    <div className="grid grid-rows-2 bg-primary-100 p-5 h-screen gap-5">
+    <div className="grid xl:grid-rows-2 bg-primary-100 p-5 lg:h-screen overflow-y-auto">
       <div className="p-5">
         <div className="grid grid-rows-[2rem_auto] gap-10 bg-primary-150 w-full h-full rounded-xl shadow-2xl p-10">
           <Typography variant="h4" className="text-white">
