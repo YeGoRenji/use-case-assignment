@@ -26,3 +26,10 @@ export interface Name {
     firstname: string;
     lastname:  string;
 }
+
+
+export interface Promotion {
+  id: number;
+  message: string;
+  date: Date;
+}

@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import { User } from '../types/apiTypes';
+import { ApiRoutes } from '../ApiRoutes';
 
 const columns: GridColDef<User>[] = [
   { field: 'id', headerName: 'ID', width: 90 },
@@ -32,14 +33,16 @@ export default function DataGridDemo() {
   const [customers, setCustomers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
+
   useEffect(() => {
-    fetch('https://fakestoreapi.com/users')
-    .then(res=>res.json())
-    .then(json=>{
-      console.log(json)
+
+    const getCustomers = async () => {
+      const data = await ApiRoutes.customers.getAll();
+      setCustomers(data);
       setLoading(false);
-      setCustomers(json);
-    })
+    }
+
+    getCustomers();
   }, [])
 
   return (

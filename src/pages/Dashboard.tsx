@@ -35,7 +35,7 @@ function Dashboard({}: Props) {
         </div>
       </div>
       <div className="p-5 flex-[4]">
-        <div className="bg-primary-150 w-full h-full rounded-xl shadow-2xl grid grid-cols-[40%_60%]">
+        <div className="bg-primary-150 w-full h-full rounded-xl shadow-2xl grid grid-cols-[40%_60%] sm:grid-cols-[40%_60%]">
           <div className="text-4xl p-10 flex flex-col gap-5">
             <div>Welcome Gunther,</div>
             <div>Central Perk is doing <strong>Great</strong> ✨</div>
@@ -49,7 +49,7 @@ function Dashboard({}: Props) {
                   </div>
                   <div className="text-lg">points</div>
                 </div>
-                <div>
+                <div className="text-gray-300">
                   {label}
                 </div>
               </div>

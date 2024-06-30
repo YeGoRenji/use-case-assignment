@@ -1,30 +1,77 @@
-import { Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@mui/material';
+import { Box } from '@mui/material';
+import { Promotion } from '../types/apiTypes';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
-const data = [
-  { id: 1, message: 'Summer Sale 50% Off!', date: '2024-06-29' },
-  { id: 2, message: 'Buy One Get One Free!', date: '2024-06-28' },
+// const data = [
+//   { id: 1, message: 'Summer Sale 50% Off!', date: '2024-06-29' },
+//   { id: 2, message: 'Buy One Get One Free!', date: '2024-06-28' },
+// ];
+
+type Props = {
+  promotions: Promotion[]
+}
+
+const columns: GridColDef<Promotion>[] = [
+  { field: 'id', headerName: 'ID', width: 90 },
+  {
+    field: 'message',
+    headerName: 'Message',
+    flex: 1,
+  },
+  {
+    field: 'date',
+    headerName: 'Date',
+    flex: 1,
+    valueGetter: (_, row) => row.date.toISOString().slice(0, 10)
+  },
 ];
 
-function PromotionHistoryTable() {
+function PromotionHistoryTable({ promotions }: Props) {
+
   return (
-    <Paper className="bg-primary-100">
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell className="text-white">Message</TableCell>
-            <TableCell className="text-white">Date</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody className='overflow-y-scroll'>
-          {data.map(row => (
-            <TableRow key={row.id}>
-              <TableCell className="text-white">{row.message}</TableCell>
-              <TableCell className="text-white">{row.date}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Paper>
+    <Box className="text-white" sx={{ height: '100%', width: '100%' }}>
+      <DataGrid
+        sx={{
+          '& .MuiDataGrid-cell': {
+            color: "white"
+          },
+          '& .MuiDataGrid-footerContainer': {
+            color: "white"
+          },
+          '& .MuiTablePagination-displayedRows': {
+            color: "white"
+          },
+          '& .MuiDataGrid-footerContainer .MuiSvgIcon-root': {
+            color: "white"
+          },
+          '& .MuiDataGrid-columnHeader': {
+            background: "#003554",
+            color: "white"
+          },
+          '& .MuiDataGrid-filler': {
+            background: "#003554",
+          },
+          '& .MuiDataGrid-columnHeaders .MuiSvgIcon-root': {
+            color: "white"
+          }
+        }}
+        rows={promotions}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 7,
+            },
+          },
+        }}
+        rowSelection={false}
+        hideFooterSelectedRowCount
+        pageSizeOptions={[7]}
+        disableColumnResize
+        autosizeOnMount
+        hideFooter
+      />
+    </Box>
   );
 }
 
