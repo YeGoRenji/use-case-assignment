@@ -16,7 +16,7 @@ export default {
       }
     },
     fontFamily: {
-      'roboto': ['Roboto', 'sans-serif']
+      'roboto': ['Roboto']
     }
   },
   plugins: [],
