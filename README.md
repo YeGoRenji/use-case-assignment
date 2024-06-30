@@ -15,7 +15,7 @@ This project is a reward system app built with React, Tailwind CSS, and Vite. It
 
 ## Architecture and Design
 
-### Api endpoints :
+### Api endpoints
 Using a class with static fields simplifies and abstracts calling them.
 ```ts
 // src/ApiRoutes.ts
@@ -31,7 +31,7 @@ class ApiRoutes {
 await ApiRoutes.customers.getAll();
 ```
 
-### Router and Layout :
+### Router and Layout
 Making a layout as a functional component that takes as prop the "slot" or the component to load depending on the page.
 
 Simplifing the addition of new routes
