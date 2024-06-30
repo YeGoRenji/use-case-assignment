@@ -15,6 +15,9 @@ export default {
         'primary-100': "#051923"
       }
     },
+    fontFamily: {
+      'roboto': ['Roboto', 'sans-serif']
+    }
   },
   plugins: [],
 }
