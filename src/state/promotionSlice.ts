@@ -3,10 +3,7 @@ import { Promotion } from '../types/apiTypes';
 
 
 const initialState: {promotions: Promotion[]} = {
-  promotions: [
-    { id: 1, message: 'Summer Sale 50% Off!', date: new Date('2024-06-29') },
-    { id: 2, message: 'Buy One Get One Free!', date: new Date('2024-06-28') },
-  ],
+  promotions: [],
 };
 
 const promotionSlice = createSlice({
