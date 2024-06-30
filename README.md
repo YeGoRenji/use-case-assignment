@@ -11,6 +11,7 @@ This project is a reward system app built with React, Tailwind CSS, and Vite. It
   - [Use case diagram](#use-case-diagram)
   - [Class diagram](#class-diagram)
   - [Sequence diagram (Get Customer points)](#sequence-diagram-get-points)
+  - [Sequence diagram (Record a transaction)](#sequence-diagram-record-a-transaction)
 - [How To Run](#how-to-run)
 
 ## Architecture and Design
