@@ -1,6 +1,6 @@
 describe('Promotion', () => {
 
-	it('should add a promotion to the history', () => {
+  it('should add a promotion to the history', () => {
     cy.visit('/promotion');
     cy.get('textarea[aria-label="promotion input"]').type('Test promotion message');
     cy.get('button').contains('Send Promotion').click();
